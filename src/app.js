@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const mongoose = require('mongoose');
 const dataBase = require('./config/dataBase');
 const path = require('path');
+const cors = require('cors');
+
 const app = express();
 
 mongoose.set('useFindAndModify', true)
@@ -18,6 +20,7 @@ mongoose.connect(dataBase.web.webURL, {
     process.exit();
 })
 
+app.use(cors())//controla o acesso do frontend às urls do backend.
 app.use(express.json()); //server para ele tratar as requisições no fomarto JSON
 app.use(express.urlencoded({extended: true}))
 //serve para lidar com requisições url enconded. Facilita no recebimento de imagens 
