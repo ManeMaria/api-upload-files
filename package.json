@@ -5,8 +5,8 @@
   "author": "cesar",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon"
   },
   "dependencies": {
     "aws-sdk": "^2.843.0",
